@@ -31,10 +31,16 @@ const FILTER_CATEGORIES: { id: ProjectCategory; label: string }[] = [
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>("All");
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPausedByHover, setIsPausedByHover] = useState(false);
   const [cardStepWidth, setCardStepWidth] = useState(484); // card width + gap
   const trackContainerRef = useRef<HTMLDivElement>(null);
+
+  const openProjectModal = useCallback((project: ProjectItem) => {
+    setSelectedProject(project);
+    setActiveModalImage(project.image);
+  }, []);
 
   // Close modal with Escape key
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -129,10 +135,6 @@ export function Projects() {
 
     return () => clearInterval(timer);
   }, [isPausedByHover, filteredProjects.length, handleNext]);
-
-  const openProjectModal = (project: ProjectItem) => {
-    setSelectedProject(project);
-  };
 
   const activeDisplayIndex =
     filteredProjects.length > 0
@@ -476,19 +478,61 @@ export function Projects() {
               </p>
 
               {/* Full Image Banner */}
-              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-[rgba(175,221,229,0.15)] bg-[#001b1e] mb-6 flex items-center justify-center">
+              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-[rgba(175,221,229,0.15)] bg-[#001b1e] mb-3 flex items-center justify-center">
                 <Image
-                  src={selectedProject.image}
+                  src={activeModalImage || selectedProject.image}
                   alt={`${selectedProject.title} Interface & Architecture`}
                   fill
                   sizes="(max-width: 768px) 100vw, 768px"
                   className={cn(
-                    selectedProject.imageFit === "contain"
-                      ? "object-contain p-4"
+                    (activeModalImage || selectedProject.image).includes("mobile")
+                      ? "object-contain p-3"
                       : "object-cover object-top"
                   )}
                 />
               </div>
+
+              {/* Gallery Image Switcher (for projects with multiple views) */}
+              {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  {selectedProject.gallery.map((imgSrc, gIdx) => {
+                    const currentActive = activeModalImage || selectedProject.image;
+                    const isSelected = currentActive === imgSrc;
+                    const isMobileImg = imgSrc.includes("mobile");
+                    const label = isMobileImg
+                      ? "Mobile Reels Feed View"
+                      : imgSrc.includes("modeling")
+                      ? "Decision Tree Predictor"
+                      : imgSrc.includes("stats") || imgSrc.includes("yes-bank.png")
+                      ? "ML Analytics & Boxplots"
+                      : "Web Portal Platform";
+
+                    return (
+                      <button
+                        key={gIdx}
+                        type="button"
+                        onClick={() => setActiveModalImage(imgSrc)}
+                        className={cn(
+                          "px-3 py-1.5 rounded-lg text-xs font-mono transition-all flex items-center gap-2 border",
+                          isSelected
+                            ? "bg-primary/20 border-primary text-white font-semibold shadow-glow"
+                            : "bg-white/[0.03] border-white/10 text-muted hover:text-white hover:border-white/20"
+                        )}
+                      >
+                        <span
+                          className="w-2 h-2 rounded-full transition-colors"
+                          style={{
+                            backgroundColor: isSelected
+                              ? selectedProject.accentColor
+                              : "rgba(255,255,255,0.3)",
+                          }}
+                        />
+                        <span>{label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
 
               {/* Architectural Overview */}
               <div className="mb-6">

@@ -14,6 +14,7 @@ export interface ProjectItem {
   techStack: string[];
   highlights?: string[];
   image: string;
+  gallery?: string[];
   imageFit?: "cover" | "contain";
   links: {
     live?: string;
@@ -55,7 +56,7 @@ export const projectsData: ProjectItem[] = [
     image: "/projects/proresume-ai.png",
     imageFit: "cover",
     links: {
-      live: "https://github.com/SanketManav9620/Proresume-AI",
+      live: "https://proresume-ai-wine.vercel.app/",
       github: "https://github.com/SanketManav9620/Proresume-AI",
     },
     featured: true,
@@ -91,9 +92,10 @@ export const projectsData: ProjectItem[] = [
       "Tailwind CSS",
     ],
     image: "/projects/reel-food.png",
-    imageFit: "contain",
+    gallery: ["/projects/reel-food.png", "/projects/reel-food-mobile.png"],
+    imageFit: "cover",
     links: {
-      live: "https://github.com/SanketManav9620/Reel-style-foodorderingApp",
+      live: "https://reel-style-foodordering-app.vercel.app/",
       github: "https://github.com/SanketManav9620/Reel-style-foodorderingApp",
     },
     featured: true,
@@ -131,7 +133,7 @@ export const projectsData: ProjectItem[] = [
     image: "/projects/nk-enterprises.png",
     imageFit: "cover",
     links: {
-      live: "https://github.com/SanketManav9620/NK-Enterprises",
+      live: "https://nkenterprises.store",
       github: "https://github.com/SanketManav9620/NK-Enterprises",
     },
     featured: true,
@@ -170,7 +172,7 @@ export const projectsData: ProjectItem[] = [
     image: "/projects/outskill.png",
     imageFit: "cover",
     links: {
-      live: "https://github.com/SanketManav9620/Outskill-app",
+      live: "https://outskill-app-frontend.vercel.app/",
       github: "https://github.com/SanketManav9620/Outskill-app",
     },
     featured: true,
@@ -204,6 +206,7 @@ export const projectsData: ProjectItem[] = [
       "Docker",
     ],
     image: "/projects/yes-bank.png",
+    gallery: ["/projects/yes-bank.png", "/projects/yes-bank-modeling.png"],
     imageFit: "cover",
     links: {
       live: "https://github.com/SanketManav9620/YESBANK_project",
