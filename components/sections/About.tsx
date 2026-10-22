@@ -7,7 +7,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { CountUp } from "@/components/ui/CountUp";
-import { EASE } from "@/lib/motion";
 import {
   GraduationCap,
   Sparkles,
