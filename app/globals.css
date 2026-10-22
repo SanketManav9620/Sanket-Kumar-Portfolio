@@ -3,25 +3,257 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color: #001b1e;
+  --text-primary: #f0fbfd;
+  --text-muted: #9fcad2;
+  --primary: #0FA4AF;
+  --secondary: #964734;
+  --accent-teal: #024950;
+  --accent-ice: #AFDDE5;
+  --accent-dark: #003135;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  color-scheme: dark;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* High-Visibility Keyboard Focus States (WCAG 2.1 AA Compliant) */
+:focus-visible {
+  outline: 2px solid #0FA4AF !important;
+  outline-offset: 3px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #0FA4AF !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 12px rgba(15, 164, 175, 0.4) !important;
+}
+
+/* Lenis Recommended CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Subtle Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.024;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Faint Grid Background */
+.bg-grid-pattern {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(175, 221, 229, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(175, 221, 229, 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 10%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 10%, #000 60%, transparent 100%);
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #001b1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(175, 221, 229, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 164, 175, 0.5);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(0, 49, 53, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(175, 221, 229, 0.12);
+}
+
+/* Selection highlight */
+::selection {
+  background-color: rgba(15, 164, 175, 0.35);
+  color: #ffffff;
+}
+
+/* Respect prefers-reduced-motion: disable parallax, tilt, magnetic, marquee, and loaders */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-spin,
+  .animate-ping,
+  .animate-pulse {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Micro-interaction: Interactive link underline drawing from left */
+.link-draw-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.link-draw-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-draw-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Micro-interaction: Cards lift 4px on hover */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Micro-interaction: Icons lift or rotate on hover */
+.icon-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .icon-hover-lift,
+.icon-hover-lift:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.icon-hover-rotate {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .icon-hover-rotate,
+.icon-hover-rotate:hover {
+  transform: rotate(6deg) scale(1.08);
+}
+
+@keyframes blobFloat1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(40px, -45px) scale(1.12);
+  }
+  66% {
+    transform: translate(-30px, 25px) scale(0.92);
+  }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-35px, 35px) scale(1.18);
+  }
+  66% {
+    transform: translate(30px, -20px) scale(0.9);
+  }
+}
+
+.animate-blob-1 {
+  animation: blobFloat1 20s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: blobFloat2 24s ease-in-out infinite;
+}
+
+/* Infinite Marquee Keyframes & Mask */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft var(--marquee-duration, 40s) linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
