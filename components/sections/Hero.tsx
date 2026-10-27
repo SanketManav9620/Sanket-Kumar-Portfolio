@@ -143,10 +143,10 @@ export function Hero() {
             </MagneticButton>
 
             <MagneticButton
-              onClick={() => {
-                window.open("mailto:0sanket0kumar@gmail.com?subject=Inquiry%20regarding%20Resume/Portfolio", "_blank");
-              }}
-              className="px-6 py-3.5 rounded-full bg-white/[0.04] text-slate-200 font-mono text-xs uppercase tracking-wider font-semibold border border-white/10 hover:border-white/30 hover:bg-white/[0.08] active:scale-95 transition-all flex items-center gap-2 backdrop-blur-sm group"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-full bg-white/[0.04] text-slate-200 font-mono text-xs uppercase tracking-wider font-semibold border border-white/10 hover:border-white/30 hover:bg-white/[0.08] active:scale-95 transition-all flex items-center gap-2 backdrop-blur-sm group cursor-pointer"
             >
               <span>Download CV</span>
               <Download className="w-4 h-4 text-muted group-hover:-translate-y-0.5 transition-transform" />

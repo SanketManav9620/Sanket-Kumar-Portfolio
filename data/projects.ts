@@ -26,6 +26,45 @@ export interface ProjectItem {
 
 export const projectsData: ProjectItem[] = [
   {
+    id: "outskill",
+    title: "OutSkill Mailer",
+    subtitle: "Automated Multi-Sender Email Dispatch & Queue",
+    oneLiner:
+      "Automated multi-sender email queue system with BullMQ + Redis background workers, token-bucket rate limiting, and Slack alerts.",
+    description:
+      "A distributed background task processor built to handle bursty email dispatches, webhook notifications, and automated Slack escalations with guaranteed delivery semantics.",
+    category: "Backend",
+    filterCategories: ["Backend"],
+    metric: "1,000+ Jobs",
+    metricLabel: "15 Concurrent Workers",
+    bullets: [
+      "BullMQ + Redis asynchronous queue architecture handling 1,000+ jobs across 15 concurrent workers with exponential backoffs.",
+      "Sender-based token-bucket rate limiting (100 emails/hour/sender) with automated job postponement.",
+      "Slack OAuth 2.0 alerting pipeline, incident escalations, and resilient third-party API error recovery.",
+      "12 optimized REST APIs with Prisma indexing, eager relation loading, and sub-50ms response times.",
+      "Elasticsearch-to-PostgreSQL fallback mechanism ensuring continuous query uptime during service failovers.",
+    ],
+    techStack: [
+      "Node.js",
+      "TypeScript",
+      "BullMQ",
+      "Redis",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Elasticsearch",
+      "Slack OAuth 2.0",
+      "Docker",
+    ],
+    image: "/projects/outskill.png",
+    imageFit: "cover",
+    links: {
+      live: "https://outskill-app-frontend.vercel.app/",
+      github: "https://github.com/SanketManav9620/Outskill-app",
+    },
+    featured: true,
+    accentColor: "#0FA4AF",
+  },
+  {
     id: "proresume-ai",
     title: "ProResume AI",
     subtitle: "AI-Powered Job Recommendation & Resume Analyzer",
@@ -138,45 +177,6 @@ export const projectsData: ProjectItem[] = [
     },
     featured: true,
     accentColor: "#AFDDE5",
-  },
-  {
-    id: "outskill",
-    title: "OutSkill Mailer",
-    subtitle: "Automated Multi-Sender Email Dispatch & Queue",
-    oneLiner:
-      "Automated multi-sender email queue system with BullMQ + Redis background workers, token-bucket rate limiting, and Slack alerts.",
-    description:
-      "A distributed background task processor built to handle bursty email dispatches, webhook notifications, and automated Slack escalations with guaranteed delivery semantics.",
-    category: "Backend",
-    filterCategories: ["Backend"],
-    metric: "1,000+ Jobs",
-    metricLabel: "15 Concurrent Workers",
-    bullets: [
-      "BullMQ + Redis asynchronous queue architecture handling 1,000+ jobs across 15 concurrent workers with exponential backoffs.",
-      "Sender-based token-bucket rate limiting (100 emails/hour/sender) with automated job postponement.",
-      "Slack OAuth 2.0 alerting pipeline, incident escalations, and resilient third-party API error recovery.",
-      "12 optimized REST APIs with Prisma indexing, eager relation loading, and sub-50ms response times.",
-      "Elasticsearch-to-PostgreSQL fallback mechanism ensuring continuous query uptime during service failovers.",
-    ],
-    techStack: [
-      "Node.js",
-      "TypeScript",
-      "BullMQ",
-      "Redis",
-      "PostgreSQL",
-      "Prisma ORM",
-      "Elasticsearch",
-      "Slack OAuth 2.0",
-      "Docker",
-    ],
-    image: "/projects/outskill.png",
-    imageFit: "cover",
-    links: {
-      live: "https://outskill-app-frontend.vercel.app/",
-      github: "https://github.com/SanketManav9620/Outskill-app",
-    },
-    featured: true,
-    accentColor: "#0FA4AF",
   },
   {
     id: "yes-bank",
