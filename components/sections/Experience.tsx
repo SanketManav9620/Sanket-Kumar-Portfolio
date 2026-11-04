@@ -31,11 +31,11 @@ export function Experience() {
     <section
       id="experience"
       ref={containerRef}
-      className="relative py-28 px-4 sm:px-6 md:px-12 overflow-hidden"
+      className="relative py-28 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#162032]"
     >
       {/* Background ambient glows */}
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-secondary/[0.03] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#B23A5B]/[0.04] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#3a3229]/30 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
@@ -55,7 +55,7 @@ export function Experience() {
           <div className="absolute left-6 sm:left-8 md:left-1/2 top-6 bottom-6 w-[2px] -translate-x-1/2 overflow-hidden z-10 pointer-events-none">
             <motion.div
               style={{ scaleY: shouldReduceMotion ? 1 : scrollYProgress, transformOrigin: "top" }}
-              className="w-full h-full bg-gradient-to-b from-primary via-[#AFDDE5] to-secondary shadow-glow will-change-transform"
+              className="w-full h-full bg-gradient-to-b from-[#4A0E17] via-[#B23A5B] to-[#F28EA9] shadow-glow will-change-transform"
             />
           </div>
 
@@ -72,37 +72,40 @@ export function Experience() {
                   transition={{ duration: 0.7, ease: EASE }}
                 >
                   <SpotlightCard
-                    spotlightColor="rgba(15, 164, 175, 0.22)"
-                    className="p-6 sm:p-8 bg-[#003135]/95 border border-[rgba(175,221,229,0.1)] hover:border-primary/40 transition-all duration-300 shadow-glass text-left"
+                    spotlightColor="rgba(178, 58, 91, 0.25)"
+                    className="p-6 sm:p-8 bg-[#3a3229] border-2 border-[#E8D5C4]/25 hover:border-[#B23A5B] shadow-[6px_6px_0px_#4A0E17] hover:shadow-[8px_8px_0px_#D45476] transition-all duration-300 shadow-glass text-left"
                   >
                     {/* Header */}
+                    <div className="btn-funky-tactile -rotate-2 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-sm bg-[#4A0E17] border-2 border-[#D45476] text-[#F28EA9] font-mono text-[10px] font-black uppercase mb-3 shadow-[3px_3px_0px_#000000]">
+                      ★ FEATURED INTERNSHIP
+                    </div>
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-white/[0.06]">
                       <div className="flex items-center gap-2">
-                        <Building2 className="w-4 h-4 text-primary-light" />
-                        <span className="font-heading text-lg font-bold text-white">
+                        <Building2 className="w-4 h-4 text-[#E8D5C4]" />
+                        <span className="font-heading text-lg font-black text-[#F5EBE0]">
                           NK Enterprises
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary-light text-xs font-mono">
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border-2 border-[#B23A5B] bg-[#162032] text-[#F5EBE0] shadow-brutal-black text-xs font-mono">
                         <Calendar className="w-3.5 h-3.5" />
                         <span>June – August 2026</span>
                       </div>
                     </div>
 
                     <div className="mb-4">
-                      <h3 className="text-xl font-heading font-extrabold text-white tracking-tight">
+                      <h3 className="text-xl font-heading font-black text-[#F5EBE0] tracking-tight">
                         Full-Stack Developer
                       </h3>
-                      <p className="font-mono text-xs text-secondary mt-0.5">
+                      <p className="font-mono text-xs text-[#E8D5C4] font-bold mt-0.5">
                         Internship • Retail Digitization & MERN Architecture
                       </p>
                     </div>
 
                     {/* Bullets with Highlighted Metrics */}
-                    <ul className="flex flex-col gap-3.5 mb-6 text-sm text-slate-300 leading-relaxed font-sans">
+                    <ul className="flex flex-col gap-3.5 mb-6 text-sm text-[#D8C3B0] leading-relaxed font-sans font-medium">
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-sm bg-[#B23A5B] mt-2 shrink-0" />
                         <span>
                           Developed a full-stack MERN e-commerce application to
                           digitize an offline retail store, with product
@@ -110,28 +113,28 @@ export function Experience() {
                         </span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-sm bg-[#F5EBE0] mt-2 shrink-0" />
                         <span>
                           Integrated the Razorpay payment API and built an admin
                           dashboard for inventory and order tracking, improving
                           order-processing efficiency by{" "}
-                          <span className="inline-flex items-baseline font-mono font-bold text-secondary text-base bg-secondary/10 px-1.5 py-0.5 rounded border border-secondary/30">
+                          <span className="inline-flex items-baseline font-mono font-bold text-[#B23A5B] text-base bg-[#162032] px-1.5 py-0.5 rounded border-2 border-[#B23A5B]">
                             <CountUp to={40} suffix="%" />
                           </span>
                           .
                         </span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-sm bg-[#B23A5B] mt-2 shrink-0" />
                         <span>
                           Improved frontend performance with debounced search and
                           React.lazy code splitting (
-                          <span className="inline-flex items-baseline font-mono font-bold text-primary-light text-base bg-primary/10 px-1.5 py-0.5 rounded border border-primary/30">
+                          <span className="inline-flex items-baseline font-mono font-bold text-[#F5EBE0] text-base bg-[#162032] px-1.5 py-0.5 rounded border-2 border-[#F5EBE0]/40">
                             <CountUp to={1.5} decimals={1} suffix="s" />
                           </span>{" "}
                           initial load); wrote Jest, Supertest, and Vitest suites
                           with{" "}
-                          <span className="inline-flex items-baseline font-mono font-bold text-secondary text-base bg-secondary/10 px-1.5 py-0.5 rounded border border-secondary/30">
+                          <span className="inline-flex items-baseline font-mono font-bold text-[#B23A5B] text-base bg-[#162032] px-1.5 py-0.5 rounded border-2 border-[#B23A5B]">
                             <CountUp to={90} suffix="%+" />
                           </span>{" "}
                           coverage.
@@ -141,11 +144,11 @@ export function Experience() {
 
                     {/* Highlight Metric Badges */}
                     <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/[0.08] border border-secondary/25 text-secondary text-xs font-mono font-semibold">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#4A0E17] border-2 border-[#D45476] text-[#F28EA9] shadow-[2px_2px_0px_#000000] text-xs font-mono font-semibold">
                         <TrendingUp className="w-3.5 h-3.5" />
                         <span>40% Efficiency Boost</span>
                       </div>
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/[0.08] border border-primary/25 text-primary-light text-xs font-mono font-semibold">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#7A172B]/80 border-2 border-[#F28EA9] text-[#FAF5EE] shadow-[2px_2px_0px_#4A0E17] text-xs font-mono font-semibold">
                         <Sparkles className="w-3.5 h-3.5" />
                         <span>1.5s Initial Load</span>
                       </div>
@@ -181,10 +184,10 @@ export function Experience() {
                   <motion.div
                     animate={shouldReduceMotion ? undefined : { scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] }}
                     transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-2 rounded-full bg-primary/30 blur-md pointer-events-none motion-reduce:animate-none"
+                    className="absolute -inset-2 rounded-sm bg-[#B23A5B]/30 blur-md pointer-events-none motion-reduce:animate-none"
                   />
-                  <div className="relative w-10 h-10 rounded-full bg-[#001b1e] border-2 border-primary flex items-center justify-center shadow-glow">
-                    <div className="w-3.5 h-3.5 rounded-full bg-primary shadow-[0_0_12px_#0FA4AF]" />
+                  <div className="relative w-10 h-10 rounded-full bg-[#3a3229] border-2 border-[#B23A5B] flex items-center justify-center shadow-glow">
+                    <div className="w-3.5 h-3.5 rounded-sm bg-[#B23A5B] shadow-[0_0_12px_#B23A5B]" />
                   </div>
                 </motion.div>
               </div>
@@ -211,10 +214,10 @@ export function Experience() {
                   <motion.div
                     animate={shouldReduceMotion ? undefined : { scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] }}
                     transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-2 rounded-full bg-secondary/30 blur-md pointer-events-none motion-reduce:animate-none"
+                    className="absolute -inset-2 rounded-sm bg-[#F5EBE0]/30 blur-md pointer-events-none motion-reduce:animate-none"
                   />
-                  <div className="relative w-10 h-10 rounded-full bg-[#001b1e] border-2 border-secondary flex items-center justify-center shadow-glow-warm">
-                    <div className="w-3.5 h-3.5 rounded-full bg-secondary shadow-[0_0_12px_#964734]" />
+                  <div className="relative w-10 h-10 rounded-full bg-[#3a3229] border-2 border-secondary flex items-center justify-center shadow-glow-warm">
+                    <div className="w-3.5 h-3.5 rounded-sm bg-[#F5EBE0] shadow-[0_0_12px_#F5EBE0]" />
                   </div>
                 </motion.div>
               </div>
@@ -228,53 +231,53 @@ export function Experience() {
                   transition={{ duration: 0.7, ease: EASE }}
                 >
                   <SpotlightCard
-                    spotlightColor="rgba(150, 71, 52, 0.2)"
-                    className="p-6 sm:p-8 bg-[#003135]/95 border border-[rgba(175,221,229,0.1)] hover:border-secondary/40 transition-all duration-300 shadow-glass text-left"
+                    spotlightColor="rgba(178, 58, 91, 0.25)"
+                    className="p-6 sm:p-8 bg-[#3a3229] border-2 border-[#E8D5C4]/25 hover:border-[#B23A5B] transition-all duration-300 shadow-[6px_6px_0px_#7A172B] hover:shadow-[8px_8px_0px_#F28EA9] text-left rounded-2xl"
                   >
                     {/* Header */}
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-white/[0.06]">
                       <div className="flex items-center gap-2">
-                        <BrainCircuit className="w-4 h-4 text-secondary" />
-                        <span className="font-heading text-lg font-bold text-white">
+                        <BrainCircuit className="w-4 h-4 text-[#E8D5C4]" />
+                        <span className="font-heading text-lg font-black text-[#F5EBE0]">
                           Winovation Services Pvt. Ltd.
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-xs font-mono">
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-[#E8D5C4] text-xs font-mono">
                         <Calendar className="w-3.5 h-3.5" />
                         <span>May – July 2025</span>
                       </div>
                     </div>
 
                     <div className="mb-4">
-                      <h3 className="text-xl font-heading font-extrabold text-white tracking-tight">
+                      <h3 className="text-xl font-heading font-black text-[#F5EBE0] tracking-tight">
                         Industry Training in AI & Machine Learning
                       </h3>
-                      <p className="font-mono text-xs text-primary-light mt-0.5">
+                      <p className="font-mono text-xs text-[#E8D5C4] mt-0.5">
                         Apprenticeship • Time-Series & Bayesian Optimization
                       </p>
                     </div>
 
                     {/* Bullets with Highlighted Metrics */}
-                    <ul className="flex flex-col gap-3.5 mb-6 text-sm text-slate-300 leading-relaxed font-sans">
+                    <ul className="flex flex-col gap-3.5 mb-6 text-sm text-[#D8C3B0] leading-relaxed font-sans font-medium">
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-sm bg-[#F5EBE0] mt-2 shrink-0" />
                         <span>
                           Built and evaluated supervised and unsupervised ML models
                           with Python, NumPy, and Pandas.
                         </span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-sm bg-[#B23A5B] mt-2 shrink-0" />
                         <span>
                           Evaluated 8 ML models on 185 monthly records, deployed
                           a forecasting system with Docker and Streamlit;
                           optimized 170+ configurations with Optuna, improving R² by{" "}
-                          <span className="inline-flex items-baseline font-mono font-bold text-secondary text-base bg-secondary/10 px-1.5 py-0.5 rounded border border-secondary/30">
+                          <span className="inline-flex items-baseline font-mono font-bold text-[#B23A5B] text-base bg-[#162032] px-1.5 py-0.5 rounded border-2 border-[#B23A5B]">
                             <CountUp to={41.7} decimals={1} suffix="%" />
                           </span>{" "}
                           and reducing RMSE by{" "}
-                          <span className="inline-flex items-baseline font-mono font-bold text-primary-light text-base bg-primary/10 px-1.5 py-0.5 rounded border border-primary/30">
+                          <span className="inline-flex items-baseline font-mono font-bold text-[#F5EBE0] text-base bg-[#162032] px-1.5 py-0.5 rounded border-2 border-[#F5EBE0]/40">
                             <CountUp to={35.4} decimals={1} suffix="%" />
                           </span>{" "}
                           versus the linear baseline.
@@ -284,11 +287,11 @@ export function Experience() {
 
                     {/* Highlight Metric Badges */}
                     <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/[0.08] border border-secondary/25 text-secondary text-xs font-mono font-semibold">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/[0.08] border border-secondary/25 text-[#E8D5C4] text-xs font-mono font-semibold">
                         <TrendingUp className="w-3.5 h-3.5" />
                         <span>+41.7% R² Improvement</span>
                       </div>
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/[0.08] border border-primary/25 text-primary-light text-xs font-mono font-semibold">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#B23A5B]/[0.08] border border-[#B23A5B]/25 text-[#E8D5C4] text-xs font-mono font-semibold">
                         <Sparkles className="w-3.5 h-3.5" />
                         <span>-35.4% RMSE Reduction</span>
                       </div>

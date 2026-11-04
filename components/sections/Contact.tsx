@@ -150,15 +150,15 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-4 sm:px-6 md:px-12 overflow-hidden">
+    <section id="contact" className="relative py-32 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#162032]">
       {/* Background ambient glows in REFIRE palette */}
-      <div className="absolute top-1/4 -right-40 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-40 w-[600px] h-[600px] bg-secondary/[0.04] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/4 -right-40 w-[600px] h-[600px] bg-[#B23A5B]/[0.05] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-10 -left-40 w-[600px] h-[600px] bg-[#3a3229]/30 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Pill Badge */}
         <Reveal delay={0.1}>
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-primary/20 bg-primary/5 text-xs font-mono uppercase tracking-widest text-primary-light">
+          <div className="btn-funky-tactile -rotate-1 inline-flex items-center gap-2 px-3.5 py-1 mb-6 rounded-md border-2 border-[#D45476] bg-[#4A0E17] text-xs font-mono font-black uppercase tracking-widest text-[#F28EA9] shadow-[4px_4px_0px_#7A172B]">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
             <span>{"// Contact & Collaboration"}</span>
           </div>
@@ -166,14 +166,14 @@ export function Contact() {
 
         {/* Huge SplitText Headline */}
         <div className="mb-6 max-w-4xl">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight text-white leading-[1.05]">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight text-[#F5EBE0] leading-[1.05]">
             <SplitText text="Let's build something together" mode="words" delay={0.15} />
           </h2>
         </div>
 
         {/* Subtitle */}
         <Reveal delay={0.25} yOffset={16}>
-          <p className="max-w-2xl text-base sm:text-lg text-muted font-sans leading-relaxed mb-16">
+          <p className="max-w-2xl text-base sm:text-lg text-[#C4B4A5] font-sans leading-relaxed mb-16">
             Have a high-throughput backend to scale, an AI project to engineer, or a full-time engineering opportunity?
             Send me a message or connect directly through my communication channels.
           </p>
@@ -184,16 +184,16 @@ export function Contact() {
           {/* Left Column: Direct Links & Info (5 cols) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             {/* Email Direct Card with Copy-to-Clipboard & Tooltip */}
-            <div className="p-6 sm:p-7 rounded-2xl border border-[rgba(175,221,229,0.12)] bg-[#003135]/65 backdrop-blur-xl relative overflow-hidden group">
-              <div className="flex items-center gap-2.5 mb-2 text-xs font-mono uppercase tracking-wider text-primary-light">
-                <Mail className="w-4 h-4 text-primary" />
+            <div className="p-6 sm:p-7 rounded-2xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-[5px_5px_0px_#4A0E17] hover:border-[#D45476] hover:shadow-[7px_7px_0px_#D45476] relative overflow-hidden group">
+              <div className="flex items-center gap-2.5 mb-2 text-xs font-mono uppercase tracking-wider text-[#B23A5B]-light">
+                <Mail className="w-4 h-4 text-[#B23A5B]" />
                 <span>Direct Email Inquiry</span>
               </div>
 
               <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="font-mono text-sm sm:text-base font-semibold text-white hover:text-primary transition-colors truncate link-draw-underline pb-0.5"
+                  className="font-mono text-sm sm:text-base font-semibold text-[#F5EBE0] hover:text-[#D45476] transition-colors truncate font-bold link-draw-underline pb-0.5"
                 >
                   {profileData.email}
                 </a>
@@ -202,11 +202,11 @@ export function Contact() {
                 <div className="relative inline-block self-start sm:self-auto">
                   <MagneticButton
                     onClick={copyEmail}
-                    className="p-2.5 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-primary/20 hover:border-primary/40 text-slate-200 hover:text-white transition-all shadow-sm group"
+                    className="btn-funky-tactile p-2.5 rounded-md border-2 border-black bg-gradient-to-r from-[#7A172B] to-[#D45476] text-white shadow-[3px_3px_0px_#4A0E17] hover:shadow-[4px_4px_0px_#D45476] transition-all group"
                     aria-label="Copy email address"
                   >
                     {copied ? (
-                      <Check className="w-4 h-4 text-primary" />
+                      <Check className="w-4 h-4 text-[#B23A5B]" />
                     ) : (
                       <Copy className="w-4 h-4 icon-hover-rotate" />
                     )}
@@ -220,7 +220,7 @@ export function Contact() {
                         animate={{ opacity: 1, y: -4, scale: 1 }}
                         exit={{ opacity: 0, y: 2, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute bottom-full right-0 mb-2 px-3 py-1 rounded-md bg-primary text-[#001b1e] text-[11px] font-mono font-bold whitespace-nowrap shadow-glow pointer-events-none"
+                        className="absolute bottom-full right-0 mb-2 px-3 py-1 rounded-md bg-primary text-black text-[11px] font-mono font-bold whitespace-nowrap shadow-glow pointer-events-none"
                       >
                         Copied to Clipboard!
                         <span className="absolute top-full right-3 -mt-1 border-4 border-transparent border-t-primary" />
@@ -236,7 +236,7 @@ export function Contact() {
             </div>
 
             {/* Social Channels via MagneticButtons */}
-            <div className="p-6 sm:p-7 rounded-2xl border border-[rgba(175,221,229,0.12)] bg-[#003135]/65 backdrop-blur-xl">
+            <div className="p-6 sm:p-7 rounded-2xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-brutal-black">
               <div className="flex items-center gap-2 mb-4 text-xs font-mono uppercase tracking-wider text-muted">
                 <Sparkles className="w-3.5 h-3.5 text-secondary" />
                 <span>Professional Profiles & Code</span>
@@ -248,9 +248,9 @@ export function Contact() {
                   href={profileData.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-[#0FA4AF]/15 hover:border-primary/50 text-slate-200 hover:text-white transition-all font-mono text-xs font-semibold group"
+                  className="btn-funky-tactile w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 border-[#F5EBE0]/20 bg-[#162032] hover:border-[#B23A5B] text-[#F5EBE0] font-mono text-xs font-black shadow-brutal-black group"
                 >
-                  <LinkedinIcon className="w-4 h-4 text-[#AFDDE5] group-hover:text-primary transition-colors icon-hover-rotate" />
+                  <LinkedinIcon className="w-4 h-4 text-[#F5EBE0] group-hover:text-[#B23A5B] transition-colors icon-hover-rotate" />
                   <span className="link-draw-underline pb-0.5">LinkedIn</span>
                 </MagneticButton>
 
@@ -259,9 +259,9 @@ export function Contact() {
                   href={profileData.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-[#0FA4AF]/15 hover:border-primary/50 text-slate-200 hover:text-white transition-all font-mono text-xs font-semibold group"
+                  className="btn-funky-tactile w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 border-[#F5EBE0]/20 bg-[#162032] hover:border-[#B23A5B] text-[#F5EBE0] font-mono text-xs font-black shadow-brutal-black group"
                 >
-                  <GithubIcon className="w-4 h-4 text-[#AFDDE5] group-hover:text-primary transition-colors icon-hover-rotate" />
+                  <GithubIcon className="w-4 h-4 text-[#F5EBE0] group-hover:text-[#B23A5B] transition-colors icon-hover-rotate" />
                   <span className="link-draw-underline pb-0.5">GitHub</span>
                 </MagneticButton>
 
@@ -270,7 +270,7 @@ export function Contact() {
                   href={profileData.socials.leetcode}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-[#964734]/25 hover:border-secondary/60 text-slate-200 hover:text-white transition-all font-mono text-xs font-semibold group"
+                  className="btn-funky-tactile w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 border-[#F5EBE0]/20 bg-[#162032] hover:border-[#B23A5B] text-[#F5EBE0] font-mono text-xs font-black shadow-brutal-black group"
                 >
                   <LeetcodeIcon className="w-4 h-4 text-[#e07e68] group-hover:text-secondary transition-colors icon-hover-rotate" />
                   <span className="link-draw-underline pb-0.5">LeetCode</span>
@@ -279,7 +279,7 @@ export function Contact() {
             </div>
 
             {/* Quick Status Pill */}
-            <div className="p-5 rounded-2xl border border-[rgba(175,221,229,0.08)] bg-[#00282c]/50 backdrop-blur-md flex items-center gap-4">
+            <div className="p-5 rounded-xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-brutal-black flex items-center gap-4">
               <span className="relative flex h-3 w-3 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75 motion-reduce:animate-none" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary" />
@@ -289,7 +289,7 @@ export function Contact() {
                   Available for Full-Time Roles
                 </p>
                 <div className="flex items-center gap-1.5 text-[11px] font-mono text-muted/80 mt-0.5">
-                  <MapPin className="w-3 h-3 text-primary-light" />
+                  <MapPin className="w-3 h-3 text-[#B23A5B]-light" />
                   <span>Rohini, Delhi, India (IST • UTC +05:30)</span>
                 </div>
               </div>
@@ -298,7 +298,7 @@ export function Contact() {
 
           {/* Right Column: Interactive Form with Floating Labels & PathLength Checkmark (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="p-7 sm:p-9 rounded-3xl border border-[rgba(175,221,229,0.15)] bg-[#003135]/85 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
+            <div className="p-7 sm:p-9 rounded-2xl border-2 border-[#F5EBE0]/20 bg-[#3a3229] shadow-[6px_6px_0px_#B23A5B] relative overflow-hidden">
               <AnimatePresence mode="wait">
                 {status === "success" ? (
                   /* Animated Success State with SVG pathLength checkmark */
@@ -315,13 +315,13 @@ export function Contact() {
                       <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse" />
                       <svg
                         viewBox="0 0 64 64"
-                        className="w-20 h-20 text-primary relative z-10"
+                        className="w-20 h-20 text-[#B23A5B] relative z-10"
                       >
                         <circle
                           cx="32"
                           cy="32"
                           r="28"
-                          fill="rgba(15, 164, 175, 0.1)"
+                          fill="rgba(178, 58, 91, 0.1)"
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeOpacity="0.4"
@@ -345,12 +345,12 @@ export function Contact() {
                     </h3>
 
                     <p className="text-sm text-slate-300 font-sans max-w-md leading-relaxed mb-8">
-                      Thank you for reaching out, <span className="text-primary font-medium">{formData.name}</span>. Your message has been routed to my personal inbox. I will review it and follow up promptly.
+                      Thank you for reaching out, <span className="text-[#B23A5B] font-medium">{formData.name}</span>. Your message has been routed to my personal inbox. I will review it and follow up promptly.
                     </p>
 
                     <MagneticButton
                       onClick={resetForm}
-                      className="px-6 py-3 rounded-xl border border-primary/40 bg-primary/10 hover:bg-primary/20 text-primary-light font-mono text-xs font-semibold transition-all shadow-glow"
+                      className="px-6 py-3 rounded-xl border border-primary/40 bg-primary/10 hover:bg-primary/20 text-[#B23A5B]-light font-mono text-xs font-semibold transition-all shadow-glow"
                     >
                       <span>Send Another Message</span>
                     </MagneticButton>
@@ -367,8 +367,8 @@ export function Contact() {
                     className="flex flex-col gap-5"
                   >
                     <div className="flex items-center gap-2 mb-2 pb-3 border-b border-white/[0.06]">
-                      <MessageSquare className="w-4 h-4 text-primary" />
-                      <h3 className="font-heading text-lg font-bold text-white tracking-tight">
+                      <MessageSquare className="w-4 h-4 text-[#B23A5B]" />
+                      <h3 className="font-heading text-lg font-black text-[#F5EBE0] tracking-tight">
                         Send a Message
                       </h3>
                     </div>
@@ -401,19 +401,19 @@ export function Contact() {
                           onChange={handleChange}
                           onFocus={() => handleFocus("name")}
                           onBlur={() => handleBlur("name")}
-                          className={`w-full pt-6 pb-2 px-4 rounded-xl font-sans text-sm text-white bg-[#002226]/80 border transition-all outline-none ${
+                          className={`w-full pt-6 pb-2 px-4 rounded-xl font-sans text-sm text-white bg-[#1a1714] border transition-all outline-none ${
                             touched.name && errors.name
                               ? "border-secondary/70 focus:border-secondary"
                               : touched.name && !errors.name
                               ? "border-primary/50 focus:border-primary"
-                              : "border-[rgba(175,221,229,0.15)] focus:border-primary"
+                              : "border-[#E8D5C4]/25 focus:border-primary"
                           } focus:ring-1 focus:ring-primary/30`}
                         />
                         <label
                           htmlFor="contact-name"
                           className={`absolute left-4 top-4 origin-left pointer-events-none transition-transform duration-200 font-mono text-xs ${
                             focusedField === "name" || formData.name
-                              ? "-translate-y-2.5 scale-[0.82] text-primary font-semibold tracking-wider uppercase"
+                              ? "-translate-y-2.5 scale-[0.82] text-[#B23A5B] font-semibold tracking-wider uppercase"
                               : "translate-y-0 scale-100 text-slate-300"
                           }`}
                         >
@@ -439,19 +439,19 @@ export function Contact() {
                           onChange={handleChange}
                           onFocus={() => handleFocus("email")}
                           onBlur={() => handleBlur("email")}
-                          className={`w-full pt-6 pb-2 px-4 rounded-xl font-sans text-sm text-white bg-[#002226]/80 border transition-all outline-none ${
+                          className={`w-full pt-6 pb-2 px-4 rounded-xl font-sans text-sm text-white bg-[#1a1714] border transition-all outline-none ${
                             touched.email && errors.email
                               ? "border-secondary/70 focus:border-secondary"
                               : touched.email && !errors.email
                               ? "border-primary/50 focus:border-primary"
-                              : "border-[rgba(175,221,229,0.15)] focus:border-primary"
+                              : "border-[#E8D5C4]/25 focus:border-primary"
                           } focus:ring-1 focus:ring-primary/30`}
                         />
                         <label
                           htmlFor="contact-email"
                           className={`absolute left-4 top-4 origin-left pointer-events-none transition-transform duration-200 font-mono text-xs ${
                             focusedField === "email" || formData.email
-                              ? "-translate-y-2.5 scale-[0.82] text-primary font-semibold tracking-wider uppercase"
+                              ? "-translate-y-2.5 scale-[0.82] text-[#B23A5B] font-semibold tracking-wider uppercase"
                               : "translate-y-0 scale-100 text-slate-300"
                           }`}
                         >
@@ -477,19 +477,19 @@ export function Contact() {
                           onChange={handleChange}
                           onFocus={() => handleFocus("message")}
                           onBlur={() => handleBlur("message")}
-                          className={`w-full pt-6 pb-2 px-4 rounded-xl font-sans text-sm text-white bg-[#002226]/80 border transition-all outline-none resize-none ${
+                          className={`w-full pt-6 pb-2 px-4 rounded-xl font-sans text-sm text-white bg-[#1a1714] border transition-all outline-none resize-none ${
                             touched.message && errors.message
                               ? "border-secondary/70 focus:border-secondary"
                               : touched.message && !errors.message
                               ? "border-primary/50 focus:border-primary"
-                              : "border-[rgba(175,221,229,0.15)] focus:border-primary"
+                              : "border-[#E8D5C4]/25 focus:border-primary"
                           } focus:ring-1 focus:ring-primary/30`}
                         />
                         <label
                           htmlFor="contact-message"
                           className={`absolute left-4 top-4 origin-left pointer-events-none transition-transform duration-200 font-mono text-xs ${
                             focusedField === "message" || formData.message
-                              ? "-translate-y-2.5 scale-[0.82] text-primary font-semibold tracking-wider uppercase"
+                              ? "-translate-y-2.5 scale-[0.82] text-[#B23A5B] font-semibold tracking-wider uppercase"
                               : "translate-y-0 scale-100 text-slate-300"
                           }`}
                         >
@@ -509,7 +509,7 @@ export function Contact() {
                       <MagneticButton
                         type="submit"
                         disabled={status === "loading"}
-                        className="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-mono text-xs font-semibold text-white bg-gradient-to-r from-primary to-[#024950] hover:from-primary-light hover:to-primary shadow-glow transition-all disabled:opacity-60 disabled:cursor-not-allowed group"
+                        className="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-heading font-black uppercase tracking-wider text-xs sm:text-sm text-white bg-gradient-to-r from-[#7A172B] via-[#B23A5B] to-[#D45476] border-2 border-black shadow-[5px_5px_0px_#4A0E17] hover:shadow-[7px_7px_0px_#D45476] hover:from-[#9B2242] hover:to-[#F28EA9] hover:text-black active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all disabled:opacity-60 disabled:cursor-not-allowed group"
                       >
                         {status === "loading" ? (
                           <>

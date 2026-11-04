@@ -64,10 +64,10 @@ export function IntroLoader() {
             clipPath: "inset(0% 0% 100% 0%)",
             transition: { duration: 0.65, ease: EASE },
           }}
-          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#001b1e] text-white select-none"
+          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#162032] text-[#F5EBE0] select-none"
         >
           {/* Subtle background glow */}
-          <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute w-96 h-96 bg-[#B23A5B]/15 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-xs px-6">
             {/* Logo */}
@@ -77,7 +77,7 @@ export function IntroLoader() {
             </div>
 
             {/* Counter percentage */}
-            <div className="font-mono text-5xl sm:text-6xl font-light tracking-tighter tabular-nums text-primary-light">
+            <div className="font-mono text-5xl sm:text-6xl font-light tracking-tighter tabular-nums text-[#F5EBE0]">
               {progress}
               <span className="text-sm font-sans text-muted ml-1">%</span>
             </div>
@@ -85,7 +85,7 @@ export function IntroLoader() {
             {/* Thin progress line - uses GPU scaleX transform instead of width */}
             <div className="w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
               <div
-                className="w-full h-full bg-gradient-to-r from-primary via-primary-light to-secondary origin-left will-change-transform transition-transform duration-75"
+                className="w-full h-full bg-gradient-to-r from-[#B23A5B] via-[#D45476] to-[#F5EBE0] origin-left will-change-transform transition-transform duration-75"
                 style={{ transform: `scaleX(${progress / 100})` }}
               />
             </div>

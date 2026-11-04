@@ -62,7 +62,7 @@ export const projectsData: ProjectItem[] = [
       github: "https://github.com/SanketManav9620/Outskill-app",
     },
     featured: true,
-    accentColor: "#0FA4AF",
+    accentColor: "#B23A5B",
   },
   {
     id: "proresume-ai",
@@ -99,7 +99,7 @@ export const projectsData: ProjectItem[] = [
       github: "https://github.com/SanketManav9620/Proresume-AI",
     },
     featured: true,
-    accentColor: "#0FA4AF",
+    accentColor: "#D45476",
   },
   {
     id: "reel-food",
@@ -138,7 +138,7 @@ export const projectsData: ProjectItem[] = [
       github: "https://github.com/SanketManav9620/Reel-style-foodorderingApp",
     },
     featured: true,
-    accentColor: "#964734",
+    accentColor: "#F5EBE0",
   },
   {
     id: "nk-enterprises",
@@ -176,7 +176,7 @@ export const projectsData: ProjectItem[] = [
       github: "https://github.com/SanketManav9620/NK-Enterprises",
     },
     featured: true,
-    accentColor: "#AFDDE5",
+    accentColor: "#E8D5C4",
   },
   {
     id: "yes-bank",
@@ -213,6 +213,6 @@ export const projectsData: ProjectItem[] = [
       github: "https://github.com/SanketManav9620/YESBANK_project",
     },
     featured: false,
-    accentColor: "#c2573f",
+    accentColor: "#C44D6C",
   },
 ];

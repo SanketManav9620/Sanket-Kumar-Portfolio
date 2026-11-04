@@ -13,22 +13,24 @@ export default function AppleIcon() {
     (
       <div
         style={{
-          fontSize: 88,
-          background: "linear-gradient(135deg, #001b1e 0%, #003135 100%)",
+          fontSize: 92,
+          background: "linear-gradient(135deg, #162032 0%, #18191f 50%, #0d0e10 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#0FA4AF",
+          color: "#F5EBE0",
           fontWeight: 900,
-          fontFamily: "monospace",
-          borderRadius: 36,
-          border: "6px solid #0FA4AF",
-          boxShadow: "0 0 40px rgba(15, 164, 175, 0.4)",
+          fontFamily: "system-ui, -apple-system, sans-serif",
+          borderRadius: 40,
+          border: "8px solid #B23A5B",
+          letterSpacing: "-2px",
+          boxShadow: "0 0 50px rgba(178, 58, 91, 0.5)",
         }}
       >
-        SK
+        <span style={{ color: "#F5EBE0" }}>S</span>
+        <span style={{ color: "#D45476" }}>K</span>
       </div>
     ),
     {

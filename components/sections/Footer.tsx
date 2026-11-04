@@ -30,23 +30,23 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative pt-20 pb-12 px-4 sm:px-6 md:px-12 border-t border-[rgba(175,221,229,0.08)] bg-[#00171a] overflow-hidden">
+    <footer className="relative pt-20 pb-12 px-4 sm:px-6 md:px-12 border-t border-[#E8D5C4]/15 bg-[#121927] border-t border-[#F5EBE0]/10 overflow-hidden">
       {/* Subtle top edge glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#B23A5B]/40 to-transparent" />
 
       <div className="max-w-6xl mx-auto flex flex-col gap-12 relative z-10">
         {/* Top Tier: Brand, Navigation links, and Back-to-Top Button */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-white/[0.05]">
           {/* Brand & Tagline */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#003135] border border-[rgba(175,221,229,0.2)] flex items-center justify-center text-primary font-mono text-xs font-bold shadow-glow">
+            <div className="btn-funky-tactile -rotate-2 w-9 h-9 rounded-md bg-[#3a3229] border-2 border-[#B23A5B] flex items-center justify-center text-[#F5EBE0] font-mono text-xs font-black shadow-brutal-black">
               SK
             </div>
             <div>
-              <p className="font-heading font-bold text-white text-base tracking-tight">
+              <p className="font-heading font-black text-[#F5EBE0] text-base tracking-tight">
                 Sanket Kumar
               </p>
-              <p className="font-mono text-xs text-muted/80">
+              <p className="font-mono text-xs text-[#C4B4A5]">
                 Full-Stack & Systems Engineer
               </p>
             </div>
@@ -58,7 +58,7 @@ export function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="font-mono text-xs uppercase tracking-wider text-muted hover:text-primary transition-colors link-draw-underline pb-0.5"
+                className="font-mono text-xs uppercase tracking-wider text-[#C4B4A5] hover:text-[#F5EBE0] transition-colors font-bold link-draw-underline pb-0.5"
               >
                 {link.label}
               </a>
@@ -69,7 +69,7 @@ export function Footer() {
           <div>
             <MagneticButton
               onClick={scrollToTop}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-primary/30 bg-[#003135]/80 hover:bg-primary/20 hover:border-primary text-primary-light font-mono text-xs font-semibold transition-all shadow-glow group"
+              className="btn-funky-tactile rotate-2 flex items-center gap-2 px-4 py-2.5 rounded-md border-2 border-black bg-[#B23A5B] hover:bg-[#F5EBE0] hover:text-black text-white font-mono text-xs font-black transition-all shadow-brutal-black group"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-1 icon-hover-lift transition-transform" />

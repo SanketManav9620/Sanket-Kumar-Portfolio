@@ -25,8 +25,7 @@ const NODES: NodeData[] = [
     badge: "React & Next.js",
     metric: "60 FPS UI",
     icon: Layout,
-    color: "#0FA4AF",
-    bgGlow: "rgba(15, 164, 175, 0.18)",
+    color: "#F5EBE0", bgGlow: "rgba(245, 235, 224, 0.25)",
     x: 50,
     y: 8,
   },
@@ -36,8 +35,7 @@ const NODES: NodeData[] = [
     badge: "Node & BullMQ",
     metric: "1k+ jobs/min",
     icon: Server,
-    color: "#964734",
-    bgGlow: "rgba(150, 71, 52, 0.18)",
+    color: "#B23A5B", bgGlow: "rgba(178, 58, 91, 0.25)",
     x: 90,
     y: 50,
   },
@@ -47,8 +45,7 @@ const NODES: NodeData[] = [
     badge: "Postgres & Redis",
     metric: "Failover Ready",
     icon: Database,
-    color: "#024950",
-    bgGlow: "rgba(2, 73, 80, 0.3)",
+    color: "#E8D5C4", bgGlow: "rgba(232, 213, 196, 0.2)",
     x: 50,
     y: 92,
   },
@@ -58,8 +55,7 @@ const NODES: NodeData[] = [
     badge: "OpenAI & Optuna",
     metric: "+41.7% R²",
     icon: Sparkles,
-    color: "#AFDDE5",
-    bgGlow: "rgba(175, 221, 229, 0.18)",
+    color: "#D45476", bgGlow: "rgba(212, 84, 118, 0.25)",
     x: 10,
     y: 50,
   },
@@ -76,7 +72,7 @@ export function SystemArchitectureVisual() {
       <div className="absolute inset-10 bg-secondary/10 rounded-full blur-2xl pointer-events-none" />
 
       {/* Orbit Rings */}
-      <div className="absolute inset-12 rounded-full border border-[rgba(175,221,229,0.06)] pointer-events-none" />
+      <div className="absolute inset-12 rounded-full border border-[#E8D5C4]/15 pointer-events-none" />
       <div className="absolute inset-24 rounded-full border border-dashed border-primary/25 animate-[spin_60s_linear_infinite] motion-reduce:animate-none pointer-events-none" />
 
       {/* SVG Connecting Circuit Lines */}
@@ -87,20 +83,20 @@ export function SystemArchitectureVisual() {
       >
         <defs>
           <linearGradient id="lineGrad1" x1="200" y1="200" x2="200" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#0FA4AF" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#0FA4AF" stopOpacity="0.1" />
+            <stop stopColor="#B23A5B" stopOpacity="0.8" />
+            <stop offset="1" stopColor="#B23A5B" stopOpacity="0.1" />
           </linearGradient>
           <linearGradient id="lineGrad2" x1="200" y1="200" x2="352" y2="200" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#964734" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#964734" stopOpacity="0.1" />
+            <stop stopColor="#F5EBE0" stopOpacity="0.8" />
+            <stop offset="1" stopColor="#F5EBE0" stopOpacity="0.1" />
           </linearGradient>
           <linearGradient id="lineGrad3" x1="200" y1="200" x2="200" y2="352" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#024950" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#024950" stopOpacity="0.1" />
+            <stop stopColor="#D45476" stopOpacity="0.8" />
+            <stop offset="1" stopColor="#D45476" stopOpacity="0.1" />
           </linearGradient>
           <linearGradient id="lineGrad4" x1="200" y1="200" x2="48" y2="200" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#AFDDE5" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#AFDDE5" stopOpacity="0.1" />
+            <stop stopColor="#E8D5C4" stopOpacity="0.8" />
+            <stop offset="1" stopColor="#E8D5C4" stopOpacity="0.1" />
           </linearGradient>
         </defs>
 
@@ -159,7 +155,7 @@ export function SystemArchitectureVisual() {
           <>
             <motion.circle
               r="3"
-              fill="#0FA4AF"
+              fill="#B23A5B"
               animate={{
                 cx: [200, 200, 200],
                 cy: [200, 60, 200],
@@ -173,7 +169,7 @@ export function SystemArchitectureVisual() {
             />
             <motion.circle
               r="3"
-              fill="#964734"
+              fill="#F5EBE0"
               animate={{
                 cx: [200, 345, 200],
                 cy: [200, 200, 200],
@@ -188,7 +184,7 @@ export function SystemArchitectureVisual() {
             />
             <motion.circle
               r="3"
-              fill="#024950"
+              fill="#D45476"
               animate={{
                 cx: [200, 200, 200],
                 cy: [200, 345, 200],
@@ -203,7 +199,7 @@ export function SystemArchitectureVisual() {
             />
             <motion.circle
               r="3"
-              fill="#AFDDE5"
+              fill="#E8D5C4"
               animate={{
                 cx: [200, 55, 200],
                 cy: [200, 200, 200],
@@ -225,14 +221,14 @@ export function SystemArchitectureVisual() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
-        className="relative z-10 w-20 h-20 rounded-2xl p-0.5 bg-gradient-to-br from-primary via-[#AFDDE5] to-secondary shadow-glow flex items-center justify-center group"
+        className="relative z-10 w-20 h-20 rounded-2xl p-0.5 bg-gradient-to-br from-primary via-[#E8D5C4] to-secondary shadow-glow flex items-center justify-center group"
       >
-        <div className="w-full h-full rounded-[14px] bg-[#003135] flex flex-col items-center justify-center p-1.5 text-center transition-all duration-300 group-hover:bg-[#024950]">
+        <div className="w-full h-full rounded-[14px] bg-[#3a3229] flex flex-col items-center justify-center p-1.5 text-center transition-all duration-300 group-hover:bg-[#D45476]">
           <span className="font-heading text-xl font-black tracking-tight text-white flex items-center gap-0.5">
             SK
             <span className="w-1.5 h-1.5 rounded-full bg-secondary inline-block animate-ping motion-reduce:animate-none" />
           </span>
-          <span className="font-mono text-[8px] uppercase tracking-wider text-[#AFDDE5] mt-0.5">
+          <span className="font-mono text-[8px] uppercase tracking-wider text-[#E8D5C4] mt-0.5">
             Architect
           </span>
         </div>
@@ -269,9 +265,9 @@ export function SystemArchitectureVisual() {
               }}
             >
               <div
-                className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[#003135]/95 border transition-all duration-300 shadow-md backdrop-blur-md card-hover-lift"
+                className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[#3a3229]/95 border transition-all duration-300 shadow-md backdrop-blur-md card-hover-lift"
                 style={{
-                  borderColor: isHovered ? node.color : "rgba(175, 221, 229, 0.12)",
+                  borderColor: isHovered ? node.color : "rgba(245, 235, 224, 0.15)",
                   boxShadow: isHovered ? `0 0 25px -5px ${node.color}` : "none",
                 }}
               >
@@ -279,7 +275,7 @@ export function SystemArchitectureVisual() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 icon-hover-lift"
                   style={{
                     backgroundColor: isHovered ? node.color : node.bgGlow,
-                    color: isHovered ? "#001b1e" : node.color,
+                    color: isHovered ? "#162032" : node.color,
                   }}
                 >
                   <IconComponent className="w-4 h-4" />

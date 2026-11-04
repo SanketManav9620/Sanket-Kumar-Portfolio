@@ -146,11 +146,11 @@ export function Projects() {
       id="projects"
       onMouseEnter={() => setIsPausedByHover(true)}
       onMouseLeave={() => setIsPausedByHover(false)}
-      className="relative py-24 sm:py-32 px-4 sm:px-6 md:px-12 overflow-hidden bg-transparent"
+      className="relative py-24 sm:py-32 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#162032]"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] rounded-full blur-[180px] bg-primary/[0.04] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-secondary/[0.03] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] rounded-full blur-[180px] bg-[#B23A5B]/[0.05] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-[#3a3229]/25 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Header Container */}
       <div className="max-w-7xl mx-auto relative z-10 mb-10">
@@ -164,7 +164,7 @@ export function Projects() {
 
           {/* Filter Pills with Sliding Active Indicator & Counter */}
           <div className="flex items-center gap-3 self-start lg:self-auto">
-            <div className="inline-flex items-center gap-1.5 p-1 rounded-full border border-[rgba(175,221,229,0.12)] bg-[#003135]/85 backdrop-blur-xl shadow-glass">
+            <div className="inline-flex items-center gap-1.5 p-1 rounded-full border-2 border-[#F5EBE0]/20 bg-[#3a3229] backdrop-blur-xl shadow-brutal-black">
               {FILTER_CATEGORIES.map((tab) => {
                 const isActive = activeFilter === tab.id;
                 return (
@@ -173,14 +173,14 @@ export function Projects() {
                     onClick={() => setActiveFilter(tab.id)}
                     className={cn(
                       "relative px-4 py-1.5 rounded-full text-xs font-mono font-medium transition-colors select-none z-10",
-                      isActive ? "text-white font-semibold" : "text-muted hover:text-white"
+                      isActive ? "text-white font-semibold" : "text-[#C4B4A5] hover:text-[#F5EBE0]"
                     )}
                     aria-pressed={isActive}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="activeFilterPill"
-                        className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-[#024950] shadow-glow -z-10"
+                        className="absolute inset-0 rounded-full bg-gradient-to-r from-[#7A172B] via-[#B23A5B] to-[#D45476] shadow-[3px_3px_0px_#4A0E17] border border-[#F28EA9]/40 -z-10"
                         transition={{ type: "spring", stiffness: 450, damping: 32 }}
                       />
                     )}
@@ -191,7 +191,7 @@ export function Projects() {
             </div>
 
             {/* Current Project Counter Badge */}
-            <div className="px-3.5 py-1.5 rounded-full border border-[rgba(175,221,229,0.15)] bg-[#002226]/80 font-mono text-xs font-semibold text-primary-light">
+            <div className="btn-funky-tactile -rotate-1 px-3.5 py-1.5 rounded-md border-2 border-[#D45476] bg-[#4A0E17] font-mono text-xs font-black text-[#F28EA9] shadow-[3px_3px_0px_#000000]">
               0{activeDisplayIndex + 1} / 0{filteredProjects.length}
             </div>
           </div>
@@ -205,9 +205,9 @@ export function Projects() {
           onClick={handlePrev}
           aria-label="Previous Project"
           title="Previous Project"
-          className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-[#001b1e]/90 hover:bg-[#0FA4AF] border border-[rgba(175,221,229,0.3)] hover:border-primary text-white shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95 group/arrow"
+          className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center bg-[#4A0E17] hover:bg-[#D45476] border-2 border-[#D45476] text-[#F28EA9] hover:text-white shadow-[4px_4px_0px_#000000] hover:shadow-[5px_5px_0px_#D45476] transition-all duration-200 hover:scale-105 active:scale-95 group/arrow"
         >
-          <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 text-primary-light group-hover/arrow:text-[#001b1e] group-hover/arrow:-translate-x-0.5 transition-all" />
+          <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 text-[#F5EBE0] group-hover/arrow:text-white group-hover/arrow:-translate-x-0.5 transition-all" />
         </button>
 
         {/* Right Floating Arrow Button */}
@@ -215,14 +215,14 @@ export function Projects() {
           onClick={handleNext}
           aria-label="Next Project"
           title="Next Project"
-          className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-[#001b1e]/90 hover:bg-[#0FA4AF] border border-[rgba(175,221,229,0.3)] hover:border-primary text-white shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95 group/arrow"
+          className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center bg-[#4A0E17] hover:bg-[#D45476] border-2 border-[#D45476] text-[#F28EA9] hover:text-white shadow-[4px_4px_0px_#000000] hover:shadow-[5px_5px_0px_#D45476] transition-all duration-200 hover:scale-105 active:scale-95 group/arrow"
         >
-          <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 text-primary-light group-hover/arrow:text-[#001b1e] group-hover/arrow:translate-x-0.5 transition-all" />
+          <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 text-[#F5EBE0] group-hover/arrow:text-white group-hover/arrow:translate-x-0.5 transition-all" />
         </button>
 
         {/* Subtle Edge Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#001b1e] to-transparent pointer-events-none z-20" />
-        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#001b1e] to-transparent pointer-events-none z-20" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#162032] to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#162032] to-transparent pointer-events-none z-20" />
 
         {/* Carousel Sliding Track */}
         <div
@@ -262,17 +262,17 @@ export function Projects() {
                       spotlightColor={`${project.accentColor}25`}
                       size={480}
                       className={cn(
-                        "h-full flex flex-col justify-between p-6 sm:p-7 bg-[#003135]/95 border transition-all duration-300 rounded-3xl shadow-glass relative overflow-hidden",
+                        "h-full flex flex-col justify-between p-6 sm:p-7 bg-[#3a3229] border-2 transition-all duration-300 rounded-2xl relative overflow-hidden shadow-brutal-black hover:shadow-brutal-burgundy",
                         isCenterProject
-                          ? "border-primary/50 shadow-[0_0_30px_rgba(15,164,175,0.15)]"
-                          : "border-[rgba(175,221,229,0.12)] hover:border-white/30"
+                          ? "border-[#D45476] shadow-[6px_6px_0px_#4A0E17]"
+                          : "border-[#E8D5C4]/25 hover:border-[#F5EBE0]/40"
                       )}
                     >
                       <div>
                         {/* Top Bar: Number Indicator & Metric Badge */}
                         <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-white/[0.06]">
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs font-bold text-primary-light bg-[#001b1e] px-2.5 py-1 rounded-md border border-[rgba(175,221,229,0.15)]">
+                            <span className="font-mono text-xs font-bold text-primary-light bg-[#4A0E17] px-2.5 py-1 rounded-md border-2 border-[#D45476] text-[#F28EA9] font-black shadow-[2px_2px_0px_#000000]">
                               0{(idx % filteredProjects.length) + 1}
                             </span>
                             <span className="font-mono text-xs text-muted uppercase tracking-wider">
@@ -295,7 +295,7 @@ export function Projects() {
                         </div>
 
                         {/* Project Image Snapshot with Reveal & Zoom */}
-                        <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-[rgba(175,221,229,0.1)] bg-[#001b1e] mb-5 flex items-center justify-center group/img">
+                        <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-[#E8D5C4]/20 bg-[#162032] mb-5 flex items-center justify-center group/img">
                           <Image
                             src={project.image}
                             alt={`${project.title} - ${project.subtitle}`}
@@ -309,7 +309,7 @@ export function Projects() {
                                 : "object-cover object-top"
                             )}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#003135]/75 via-transparent to-transparent pointer-events-none" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#24201c]/80 via-transparent to-transparent pointer-events-none" />
                           <div className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-mono text-white/90 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
                             <Maximize2 className="w-3 h-3 text-secondary" />
                             <span>Inspect</span>
@@ -317,15 +317,15 @@ export function Projects() {
                         </div>
 
                         {/* Title & Tagline */}
-                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-white group-hover:text-primary-light transition-colors mb-1">
+                        <h3 className="font-heading text-xl sm:text-2xl font-black text-[#F5EBE0] group-hover:text-[#D45476] transition-colors mb-1">
                           {project.title}
                         </h3>
-                        <p className="font-mono text-xs text-secondary mb-3 font-medium">
+                        <p className="font-mono text-xs text-[#E8D5C4] mb-3 font-bold flex items-center gap-1.5">
                           {project.subtitle}
                         </p>
 
                         {/* Description */}
-                        <p className="text-sm text-slate-300 font-sans leading-relaxed mb-5 line-clamp-2">
+                        <p className="text-sm text-[#D8C3B0] font-sans leading-relaxed mb-5 line-clamp-2">
                           {project.oneLiner}
                         </p>
 
@@ -334,7 +334,7 @@ export function Projects() {
                           {project.techStack.slice(0, 4).map((tech) => (
                             <span
                               key={tech}
-                              className="px-2 py-0.5 rounded text-[11px] font-mono border border-white/[0.08] bg-white/[0.03] text-slate-300"
+                              className="px-2 py-0.5 rounded text-[11px] font-mono border border-[#E8D5C4]/25 bg-[#162032] text-[#E8D5C4] hover:border-[#B23A5B] hover:text-[#F5EBE0]"
                             >
                               {tech}
                             </span>
@@ -355,7 +355,7 @@ export function Projects() {
                               href={project.links.live}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="group/btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-primary/40 bg-primary/20 text-xs font-mono font-medium text-white hover:bg-primary/30 hover:border-primary transition-all shadow-glow"
+                              className="btn-funky-tactile -rotate-1 group/btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border-2 border-black bg-[#B23A5B] text-xs font-mono font-black text-white hover:bg-[#D45476] shadow-brutal-black"
                               onClick={(e) => e.stopPropagation()}
                             >
                               <span className="link-draw-underline pb-0.5">Demo</span>
@@ -367,7 +367,7 @@ export function Projects() {
                               href={project.links.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="group/btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/[0.04] text-xs font-mono font-medium text-muted hover:text-white hover:border-white/30 hover:bg-white/[0.08] transition-all"
+                              className="btn-funky-tactile rotate-1 group/btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border-2 border-[#D45476] bg-[#4A0E17] text-xs font-mono font-black text-[#F28EA9] hover:bg-[#7A172B] hover:text-white shadow-[3px_3px_0px_#000000]"
                               onClick={(e) => e.stopPropagation()}
                             >
                               <GithubIcon className="w-3.5 h-3.5 icon-hover-rotate" />
@@ -404,7 +404,7 @@ export function Projects() {
                 className={cn(
                   "transition-all duration-300 rounded-full",
                   isActive
-                    ? "w-8 h-2 bg-gradient-to-r from-primary to-[#AFDDE5] shadow-glow"
+                    ? "w-8 h-2 bg-[#B23A5B] shadow-brutal-black"
                     : "w-2 h-2 bg-white/20 hover:bg-white/40"
                 )}
               />
@@ -439,7 +439,7 @@ export function Projects() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", stiffness: 350, damping: 30 }}
-              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-[rgba(175,221,229,0.18)] bg-[#00282c] p-6 sm:p-9 shadow-2xl z-10 scrollbar-thin scrollbar-thumb-white/20 select-text"
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border-2 border-[#F5EBE0]/20 bg-[#24201c] p-6 sm:p-9 shadow-2xl z-10 scrollbar-thin scrollbar-thumb-white/20 select-text"
             >
               {/* Close Button */}
               <button
@@ -478,7 +478,7 @@ export function Projects() {
               </p>
 
               {/* Full Image Banner */}
-              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-[rgba(175,221,229,0.15)] bg-[#001b1e] mb-3 flex items-center justify-center">
+              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-[#E8D5C4]/25 bg-[#162032] mb-3 flex items-center justify-center">
                 <Image
                   src={activeModalImage || selectedProject.image}
                   alt={`${selectedProject.title} Interface & Architecture`}
@@ -595,7 +595,7 @@ export function Projects() {
                       href={selectedProject.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/modal-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-mono text-xs font-semibold text-white bg-gradient-to-r from-primary to-[#024950] hover:from-primary-light hover:to-primary shadow-glow transition-all"
+                      className="group/modal-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-mono text-xs font-semibold text-white bg-[#B23A5B] hover:bg-[#D45476] shadow-glow transition-all"
                     >
                       <span className="link-draw-underline pb-0.5">Launch Live Demo</span>
                       <ExternalLink className="w-4 h-4 group-hover/modal-btn:translate-x-0.5 group-hover/modal-btn:-translate-y-0.5 transition-transform" />

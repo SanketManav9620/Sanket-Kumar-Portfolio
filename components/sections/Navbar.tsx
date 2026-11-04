@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 import { EASE, DURATIONS, STAGGER } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Menu, X } from "lucide-react";
@@ -18,7 +17,7 @@ const NAV_ITEMS = [
 export function Navbar() {
   const { scrollY, scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>("about");
+  const [activeSection, setActiveSection] = useState<string>("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -40,8 +39,13 @@ export function Navbar() {
   useEffect(() => {
     const sectionIds = ["about", "projects", "experience", "skills", "contact"];
     const handleScrollSpy = () => {
-      const scrollPosition = window.scrollY + 200;
-
+      const currentScroll = window.scrollY;
+      const aboutEl = document.getElementById("about");
+      if (aboutEl && currentScroll < aboutEl.offsetTop - 280) {
+        setActiveSection("");
+        return;
+      }
+      const scrollPosition = currentScroll + 280;
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const section = document.getElementById(sectionIds[i]);
         if (section) {
@@ -55,6 +59,7 @@ export function Navbar() {
     };
 
     window.addEventListener("scroll", handleScrollSpy, { passive: true });
+    handleScrollSpy();
     return () => window.removeEventListener("scroll", handleScrollSpy);
   }, []);
 
@@ -71,7 +76,7 @@ export function Navbar() {
     <>
       {/* Scroll Progress Bar at the top */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-primary via-primary-light to-secondary z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#B23A5B] via-[#D45476] to-[#F5EBE0] z-[100] origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -89,22 +94,23 @@ export function Navbar() {
           className={cn(
             "w-full max-w-5xl flex items-center justify-between px-5 py-3 rounded-full transition-all duration-300",
             isScrolled
-              ? "glass-panel shadow-glass border-[rgba(175,221,229,0.12)] bg-[#003135]/85 backdrop-blur-xl"
+              ? "glass-panel shadow-glass border-[#F5EBE0]/15 bg-[#3a3229]/90 backdrop-blur-xl border-[#F5EBE0]/15"
               : "bg-transparent border border-transparent"
           )}
         >
-          {/* Logo */}
+          {/* Funky Skewed Brand Logo */}
           <a
             href="#"
-            className="group flex items-center gap-1 font-heading text-lg font-bold tracking-tight text-white focus:outline-none"
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            className="btn-funky-tactile -rotate-2 inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#4A0E17] text-[#F28EA9] font-mono text-xs font-black uppercase tracking-wider border-2 border-[#D45476] shadow-[4px_4px_0px_#7A172B] hover:border-[#F28EA9] hover:rotate-0 transition-transform select-none focus:outline-none"
             aria-label="Sanket Kumar Portfolio Home"
           >
-            <span className="group-hover:text-primary-light transition-colors">sanket</span>
-            <span className="text-secondary animate-pulse motion-reduce:animate-none">_</span>
+            <span className="text-[#B23A5B] font-black">&lt;SK/&gt;</span>
+            <span className="text-[#F5EBE0]">SANKET</span>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#001b1e]/60 p-1.5 rounded-full border border-[rgba(175,221,229,0.08)]">
+          <nav className="hidden md:flex items-center gap-1 bg-[#162032]/80 p-1.5 rounded-full border border-[#F5EBE0]/10">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.replace("#", "");
               return (
@@ -119,7 +125,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="navbar-active-pill"
-                      className="absolute inset-0 bg-primary/20 border border-primary/40 rounded-full -z-10 shadow-sm"
+                      className="absolute inset-0 bg-[#B23A5B] rounded-full -z-10 shadow-sm"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -131,7 +137,7 @@ export function Navbar() {
 
           {/* Hire Me CTA Button & Mobile Toggle */}
           <div className="flex items-center gap-3">
-            <MagneticButton
+            <button
               onClick={() => {
                 const contactEl = document.getElementById("contact");
                 if (contactEl) {
@@ -140,19 +146,29 @@ export function Navbar() {
                   window.location.href = "mailto:0sanket0kumar@gmail.com";
                 }
               }}
-              className="group hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-mono font-medium tracking-wide bg-gradient-to-r from-primary to-primary-dark text-white border border-primary/50 shadow-glow hover:brightness-110 active:scale-95 transition-all"
+              className="btn-funky-tactile rotate-2 hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-[#7A172B] to-[#D45476] text-white font-mono text-xs font-black tracking-wider border-2 border-black shadow-[4px_4px_0px_#4A0E17] hover:rotate-0 hover:from-[#D45476] hover:to-[#F28EA9] hover:text-black hover:shadow-[5px_5px_0px_#4A0E17] transition-all cursor-pointer select-none"
             >
-              <span>Hire Me</span>
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-            </MagneticButton>
+              <span>⚡ HIRE ME</span>
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[3]" />
+            </button>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Persona 5 Styled MENU Badge */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-full border border-white/10 bg-white/5 text-white md:hidden hover:bg-white/10 active:scale-90 transition-all focus:outline-none"
+              className="btn-funky-tactile -rotate-3 px-3 py-1.5 bg-[#F5EBE0] text-black border-2 border-black shadow-brutal-black md:hidden hover:rotate-0 active:scale-95 transition-all focus:outline-none font-mono text-xs font-black tracking-wider flex items-center gap-1.5"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 icon-hover-rotate" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? (
+                <>
+                  <X className="w-4 h-4 text-primary" />
+                  <span>CLOSE</span>
+                </>
+              ) : (
+                <>
+                  <Menu className="w-4 h-4 text-primary" />
+                  <span>MENU</span>
+                </>
+              )}
             </button>
           </div>
         </div>
@@ -166,7 +182,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#001b1e]/98 backdrop-blur-2xl flex flex-col justify-between p-8 md:hidden select-none"
+            className="fixed inset-0 z-40 bg-[#162032]/98 backdrop-blur-2xl flex flex-col justify-between p-8 md:hidden select-none"
           >
             {/* Background ambient accents */}
             <div className="absolute top-1/4 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-[100px] pointer-events-none" />

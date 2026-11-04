@@ -108,13 +108,19 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#001b1e",
+  themeColor: "#162032",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -175,12 +181,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans bg-[#001b1e] text-[#f0fbfd] antialiased selection:bg-primary/30 selection:text-white`}
+        className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans bg-[#162032] text-[#FAF5EE] antialiased selection:bg-primary/30 selection:text-white`}
       >
         {/* Skip to main content accessibility link */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100000] px-4 py-2.5 rounded-lg bg-primary text-[#001b1e] font-mono text-xs font-bold shadow-glow outline-none ring-2 ring-white transition-all"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100000] px-4 py-2.5 rounded-lg bg-primary text-[#162032] font-mono text-xs font-bold shadow-glow outline-none ring-2 ring-white transition-all"
         >
           Skip to main content
         </a>

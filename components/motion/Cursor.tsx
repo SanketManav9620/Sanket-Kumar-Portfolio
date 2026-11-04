@@ -92,12 +92,12 @@ export function Cursor() {
         style={{
           x: ringX,
           y: ringY,
-          borderColor: cursorType === "view" ? "#0FA4AF" : "rgba(175, 221, 229, 0.75)",
+          borderColor: cursorType === "view" ? "#B23A5B" : "rgba(245, 235, 224, 0.75)",
           backgroundColor:
             cursorType === "view"
-              ? "rgba(15, 164, 175, 0.22)"
+              ? "rgba(178, 58, 91, 0.25)"
               : cursorType === "hover"
-              ? "rgba(150, 71, 52, 0.25)"
+              ? "rgba(245, 235, 224, 0.2)"
               : "transparent",
           backdropFilter: cursorType === "view" ? "blur(4px)" : "none",
         }}
@@ -111,7 +111,7 @@ export function Cursor() {
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.6 }}
-            className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#AFDDE5] select-none"
+            className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#F5EBE0] select-none"
           >
             View
           </motion.span>

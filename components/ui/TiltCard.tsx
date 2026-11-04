@@ -80,7 +80,7 @@ export function TiltCard({
           transformStyle: "preserve-3d",
         }}
         className={cn(
-          "relative overflow-hidden rounded-2xl border border-[rgba(175,221,229,0.1)] bg-[#003135] card-hover-lift",
+          "relative overflow-hidden rounded-2xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] card-hover-lift",
           className
         )}
         {...props}

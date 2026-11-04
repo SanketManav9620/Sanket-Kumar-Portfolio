@@ -31,8 +31,7 @@ const SKILL_CATEGORIES: SkillCategoryDef[] = [
     id: "languages",
     title: "Languages",
     icon: Code2,
-    accentColor: "#0FA4AF",
-    spotlightColor: "rgba(15, 164, 175, 0.2)",
+    accentColor: "#B23A5B", spotlightColor: "rgba(178, 58, 91, 0.25)",
     description: "Core programming languages for algorithmic problem-solving and systems.",
     skills: [
       { name: "TypeScript", highlight: true },
@@ -46,8 +45,7 @@ const SKILL_CATEGORIES: SkillCategoryDef[] = [
     id: "frontend",
     title: "Frontend",
     icon: Layout,
-    accentColor: "#AFDDE5",
-    spotlightColor: "rgba(175, 221, 229, 0.2)",
+    accentColor: "#F5EBE0", spotlightColor: "rgba(245, 235, 224, 0.2)",
     description: "Modern component-driven web architectures and 60 FPS interfaces.",
     skills: [
       { name: "React.js", highlight: true },
@@ -63,8 +61,7 @@ const SKILL_CATEGORIES: SkillCategoryDef[] = [
     id: "backend",
     title: "Backend and APIs",
     icon: Server,
-    accentColor: "#964734",
-    spotlightColor: "rgba(150, 71, 52, 0.2)",
+    accentColor: "#D45476", spotlightColor: "rgba(212, 84, 118, 0.25)",
     description: "Robust asynchronous microservices, queues, and secure RESTful APIs.",
     skills: [
       { name: "Node.js", highlight: true },
@@ -80,8 +77,7 @@ const SKILL_CATEGORIES: SkillCategoryDef[] = [
     id: "databases",
     title: "Databases and Caching",
     icon: Database,
-    accentColor: "#0FA4AF",
-    spotlightColor: "rgba(15, 164, 175, 0.2)",
+    accentColor: "#B23A5B", spotlightColor: "rgba(178, 58, 91, 0.25)",
     description: "Relational, document, and in-memory stores with resilient failovers.",
     skills: [
       { name: "PostgreSQL", highlight: true },
@@ -96,8 +92,7 @@ const SKILL_CATEGORIES: SkillCategoryDef[] = [
     id: "ai-ml",
     title: "AI / ML",
     icon: Sparkles,
-    accentColor: "#AFDDE5",
-    spotlightColor: "rgba(175, 221, 229, 0.2)",
+    accentColor: "#F5EBE0", spotlightColor: "rgba(245, 235, 224, 0.2)",
     description: "Machine learning pipelines, hyperparameter tuning, and LLM integrations.",
     skills: [
       { name: "Machine Learning (Supervised/Unsupervised)", highlight: true },
@@ -112,8 +107,7 @@ const SKILL_CATEGORIES: SkillCategoryDef[] = [
     id: "tools",
     title: "Tools and Cloud",
     icon: Wrench,
-    accentColor: "#964734",
-    spotlightColor: "rgba(150, 71, 52, 0.2)",
+    accentColor: "#D45476", spotlightColor: "rgba(212, 84, 118, 0.25)",
     description: "Containerization, CI/CD automation, and cloud delivery pipelines.",
     skills: [
       { name: "Docker", highlight: true },
@@ -138,14 +132,14 @@ function MarqueeCard({ item }: { item: TechItem }) {
           "--brand-color": item.color,
         } as React.CSSProperties
       }
-      className="group relative flex items-center gap-3 px-4 py-2.5 rounded-xl border border-[rgba(175,221,229,0.1)] bg-[#003135]/90 backdrop-blur-md cursor-default select-none transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-color)] hover:shadow-[0_0_28px_var(--glow-color)] shrink-0"
+      className="group relative flex items-center gap-3 px-4 py-2.5 rounded-xl btn-funky-tactile border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-[3px_3px_0px_#4A0E17] hover:shadow-[5px_5px_0px_#D45476] hover:border-[#D45476] shrink-0"
     >
       <div className="w-6 h-6 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
         <IconComponent className="w-5 h-5" />
       </div>
 
       <div className="flex flex-col text-left">
-        <span className="text-xs font-semibold text-white tracking-tight group-hover:text-white transition-colors">
+        <span className="text-xs font-semibold text-[#F5EBE0] tracking-tight font-black group-hover:text-white transition-colors">
           {item.name}
         </span>
         <span className="text-[9px] font-mono uppercase tracking-wider text-muted/70">
@@ -183,9 +177,9 @@ export function TechStack() {
   });
 
   return (
-    <section id="skills" className="relative py-24 sm:py-32 px-4 sm:px-6 md:px-12 overflow-hidden">
+    <section id="skills" className="relative py-24 sm:py-32 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#162032]">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#B23A5B]/[0.05] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
@@ -229,7 +223,7 @@ export function TechStack() {
             <div className="flex items-center justify-between mb-8 pb-3 border-b border-white/[0.06]">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-secondary" />
-                <h3 className="font-heading text-xl font-bold text-white tracking-tight">
+                <h3 className="font-heading text-xl font-bold text-[#F5EBE0] tracking-tight font-black">
                   Categorized Competencies
                 </h3>
               </div>
@@ -252,7 +246,7 @@ export function TechStack() {
                 >
                   <SpotlightCard
                     spotlightColor={cat.spotlightColor}
-                    className="h-full flex flex-col justify-between p-6 bg-[#003135]/90 border border-[rgba(175,221,229,0.1)] hover:border-primary/40 transition-all duration-300 card-hover-lift group"
+                    className="h-full flex flex-col justify-between p-6 bg-[#3a3229] border-2 border-[#E8D5C4]/25 hover:border-[#B23A5B] rounded-2xl shadow-[5px_5px_0px_#4A0E17] hover:shadow-[7px_7px_0px_#D45476] transition-all duration-300 card-hover-lift group"
                   >
                     <div>
                       {/* Card Header */}
@@ -279,10 +273,10 @@ export function TechStack() {
                         </span>
                       </div>
 
-                      <h4 className="font-heading text-lg font-bold text-white tracking-tight mb-1">
+                      <h4 className="font-heading text-lg font-bold text-[#F5EBE0] tracking-tight font-black mb-1">
                         {cat.title}
                       </h4>
-                      <p className="text-xs text-muted leading-relaxed mb-6 font-sans">
+                      <p className="text-xs text-[#C4B4A5] leading-relaxed mb-6 font-sans">
                         {cat.description}
                       </p>
                     </div>
@@ -292,7 +286,7 @@ export function TechStack() {
                       {cat.skills.map((skill) => (
                         <span
                           key={skill.name}
-                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-medium border transition-all duration-200 bg-white/[0.02] border-white/[0.08] text-slate-300 hover:border-white/25 hover:text-white hover:-translate-y-0.5 cursor-default select-none"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-medium border transition-all duration-200 btn-funky-tactile bg-[#162032] border border-[#E8D5C4]/25 text-[#E8D5C4] hover:border-[#D45476] hover:text-[#F28EA9] shadow-[2px_2px_0px_#4A0E17] hover:-translate-y-0.5 cursor-default select-none"
                         >
                           {skill.highlight && (
                             <CheckCircle2

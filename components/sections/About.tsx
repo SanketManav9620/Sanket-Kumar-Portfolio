@@ -79,7 +79,7 @@ function Word({
 
 export function About() {
   return (
-    <section id="about" className="relative py-10 sm:py-14 md:py-14 px-4 sm:px-6 md:px-12 overflow-hidden">
+    <section id="about" className="relative py-10 sm:py-14 md:py-14 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#162032]">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-0 w-[450px] h-[450px] bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-secondary/[0.03] rounded-full blur-[140px] pointer-events-none" />
@@ -99,7 +99,11 @@ export function About() {
           {/* ================= LEFT COLUMN: Compact Photo (Reduced 40%) + Status Chip + Education Card ================= */}
           <div className="lg:col-span-5 flex flex-col gap-3.5 w-full">
             {/* 1. Portrait Photo Card - 40% reduced width/height (max-w-[245px]) */}
-            <div className="w-full max-w-[245px] sm:max-w-[250px] mx-auto lg:mx-0">
+            <div className="w-full max-w-[245px] sm:max-w-[250px] mx-auto lg:mx-0 relative">
+              {/* Funky Persona Comic Sticker */}
+              <div className="absolute -top-3.5 -right-2 z-30 btn-funky-tactile rotate-6 px-2.5 py-0.5 rounded-sm bg-[#4A0E17] text-[#F28EA9] border-2 border-[#D45476] shadow-[3px_3px_0px_#000000] font-mono text-[10px] font-black uppercase tracking-wider">
+                ★ BPIT DELHI 2027
+              </div>
               <TiltCard
                 maxTilt={8}
                 perspective={1200}
@@ -112,7 +116,7 @@ export function About() {
                     className="absolute -inset-[100%] animate-[spin_8s_linear_infinite] motion-reduce:animate-none"
                     style={{
                       background:
-                        "conic-gradient(from 0deg at 50% 50%, #0FA4AF 0deg, #964734 120deg, #AFDDE5 240deg, #024950 300deg, #0FA4AF 360deg)",
+                        "conic-gradient(from 0deg at 50% 50%, #B23A5B 0deg, #F5EBE0 120deg, #D45476 240deg, #18191f 300deg, #B23A5B 360deg)",
                     }}
                     aria-hidden="true"
                   />
@@ -122,13 +126,13 @@ export function About() {
                     className="absolute -inset-2 opacity-50 blur-lg animate-[spin_8s_linear_infinite] motion-reduce:animate-none"
                     style={{
                       background:
-                        "conic-gradient(from 0deg at 50% 50%, #0FA4AF 0deg, #964734 120deg, #AFDDE5 240deg, #024950 300deg, #0FA4AF 360deg)",
+                        "conic-gradient(from 0deg at 50% 50%, #B23A5B 0deg, #F5EBE0 120deg, #D45476 240deg, #18191f 300deg, #B23A5B 360deg)",
                     }}
                     aria-hidden="true"
                   />
 
                   {/* Inner Photo Wrapper */}
-                  <div className="relative rounded-[14px] overflow-hidden bg-[#003135] z-10">
+                  <div className="relative rounded-[14px] overflow-hidden bg-[#18191f] z-10">
                     <div className="relative w-full aspect-[4/5] overflow-hidden">
                       <Image
                         src="/profile.jpg"
@@ -141,10 +145,10 @@ export function About() {
                       />
 
                       {/* Vignette bottom gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#003135]/90 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#3a3229]/90 via-transparent to-transparent pointer-events-none" />
 
                       {/* Floating Location & Role Pill */}
-                      <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1.5 p-2 rounded-lg bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-mono">
+                      <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1.5 p-2 rounded-lg bg-[#3a3229]/95 backdrop-blur-md border border-[#E8D5C4]/30 text-[10px] font-mono">
                         <div className="flex items-center gap-1.5 text-white/90">
                           <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse motion-reduce:animate-none" />
                           <span>Rohini, Delhi</span>
@@ -157,7 +161,7 @@ export function About() {
               </TiltCard>
 
               {/* Status & Availability Chip */}
-              <div className="mt-2.5 p-2 rounded-lg border border-white/[0.08] bg-white/[0.02] backdrop-blur-md flex items-center justify-between gap-2 text-[11px] font-mono text-muted">
+              <div className="mt-2.5 btn-funky-tactile -rotate-1 p-2 rounded-md border-2 border-[#D45476] bg-[#4A0E17] shadow-[4px_4px_0px_#000000] flex items-center justify-between gap-2 text-[11px] font-mono text-[#F28EA9]">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping motion-reduce:animate-none" />
                   <span className="text-white/90 font-medium">Open to Roles</span>
@@ -168,27 +172,27 @@ export function About() {
 
             {/* 2. B.Tech in CSE Education Card (Positioned directly below Image) */}
             <SpotlightCard
-              spotlightColor="rgba(15, 164, 175, 0.22)"
-              className="p-3.5 sm:p-4 rounded-xl border border-[rgba(175,221,229,0.12)] bg-[#003135]/85 backdrop-blur-xl hover:border-primary/40 transition-all shadow-glass card-hover-lift group"
+              spotlightColor="rgba(178, 58, 91, 0.25)"
+              className="p-3.5 sm:p-4 rounded-xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] hover:border-[#B23A5B] transition-all shadow-brutal-black card-hover-lift group"
             >
               <div className="flex flex-col gap-2 pb-2.5 mb-2.5 border-b border-white/[0.06]">
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-[#024950]/50 border border-primary/30 flex items-center justify-center text-[#AFDDE5] shadow-glow icon-hover-lift shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#4A0E17] border-2 border-[#D45476] flex items-center justify-center text-[#F28EA9] shadow-[3px_3px_0px_#7A172B] shadow-glow icon-hover-lift shrink-0">
                       <GraduationCap className="w-4 h-4" />
                     </div>
                     <div>
-                      <h3 className="font-heading text-xs sm:text-[13.5px] font-bold text-white leading-tight">
+                      <h3 className="font-heading text-xs sm:text-[13.5px] font-black text-[#F5EBE0] leading-tight">
                         B.Tech in Computer Science & Engineering
                       </h3>
-                      <p className="font-mono text-[11px] text-secondary mt-0.5 font-medium">
+                      <p className="font-mono text-[11px] text-[#E8D5C4] mt-0.5 font-bold">
                         Bhagwan Parshuram Institute of Technology, Delhi
                       </p>
                     </div>
                   </div>
 
                   {/* "Current" Badge */}
-                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border border-secondary/40 bg-secondary/15 text-[#e07e68] font-mono text-[10px] font-semibold shrink-0 shadow-glow-warm">
+                  <div className="btn-funky-tactile rotate-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md border-2 border-[#4A0E17] bg-gradient-to-r from-[#7A172B] to-[#D45476] text-white font-mono text-[10px] font-black shrink-0 shadow-[3px_3px_0px_#4A0E17]">
                     <span className="relative flex h-1.5 w-1.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75 motion-reduce:animate-none" />
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary" />
@@ -210,7 +214,7 @@ export function About() {
                 </div>
                 <div className="col-span-2 flex items-center gap-1.5 pt-0.5">
                   <Award className="w-3 h-3 text-primary-light" />
-                  <span className="text-primary-light font-semibold">CGPA: 9.05 / 10 (90.07%)</span>
+                  <span className="font-bold text-[#F28EA9] bg-[#4A0E17] px-2 py-0.5 rounded border border-[#D45476]">CGPA: 9.05 / 10 (90.07%)</span>
                 </div>
               </div>
 
@@ -239,14 +243,28 @@ export function About() {
           <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5">
             {/* Story Paragraphs with Word-by-Word Scroll Illumination */}
             <div className="flex flex-col gap-2.5 sm:gap-3">
-              {STORY_PARAGRAPHS.map((paragraph, index) => (
+              {STORY_PARAGRAPHS.map((paragraph, index) => {
+                const stepLabels = [
+                  "// 01 ARCHITECTURE & SCALABILITY",
+                  "// 02 PRODUCTION PERFORMANCE & CACHING",
+                  "// 03 ALGORITHMIC MASTERY (400+ DSA)"
+                ];
+                const badgeBorders = ["border-[#D45476]", "border-[#B23A5B]", "border-[#7A172B]"];
+                const badgeColors = ["text-[#F28EA9]", "text-[#FAF5EE]", "text-[#FBD5DF]"];
+                return (
                 <div
                   key={index}
-                  className="p-3 sm:p-3.5 rounded-xl border border-white/[0.06] bg-white/[0.015] backdrop-blur-md shadow-glass"
+                  className="p-3.5 sm:p-4 rounded-xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-brutal-black text-[#F5EBE0] relative group hover:border-[#D45476] transition-all"
                 >
+                  <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-white/[0.06]">
+                    <span className={`font-mono text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-sm bg-[#4A0E17] border ${badgeBorders[index]} ${badgeColors[index]} shadow-[2px_2px_0px_#000000]`}>
+                      {stepLabels[index]}
+                    </span>
+                  </div>
                   <ScrollWordParagraph paragraph={paragraph} />
                 </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Animated CountUp Stats in Glass Cards - Same Font Size as original */}
@@ -260,18 +278,18 @@ export function About() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {/* 1. 400+ DSA Problems */}
                 <SpotlightCard
-                  spotlightColor="rgba(15, 164, 175, 0.25)"
-                  className="p-3.5 sm:p-4 rounded-xl border border-[rgba(175,221,229,0.1)] bg-[#003135]/60 backdrop-blur-xl hover:border-primary/50 transition-all flex flex-col justify-between card-hover-lift"
+                  spotlightColor="rgba(178, 58, 91, 0.25)"
+                  className="p-3.5 sm:p-4 rounded-xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-brutal-black hover:border-primary/50 transition-all flex flex-col justify-between card-hover-lift"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <Code2 className="w-4 h-4 text-primary" />
                     <span className="text-[10px] font-mono text-muted/80">LeetCode/GFG</span>
                   </div>
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-[#F5EBE0] tracking-tight">
                       <CountUp to={400} suffix="+" duration={2} />
                     </div>
-                    <p className="font-mono text-xs text-primary-light mt-0.5 font-medium">
+                    <p className="font-mono text-xs text-[#E8D5C4] mt-0.5 font-bold">
                       DSA Problems
                     </p>
                     <p className="text-[11px] text-muted/70 mt-1 leading-snug">
@@ -282,18 +300,18 @@ export function About() {
 
                 {/* 2. 90.07% Academic Score */}
                 <SpotlightCard
-                  spotlightColor="rgba(175, 221, 229, 0.22)"
-                  className="p-3.5 sm:p-4 rounded-xl border border-[rgba(175,221,229,0.1)] bg-[#003135]/60 backdrop-blur-xl hover:border-[#AFDDE5]/50 transition-all flex flex-col justify-between card-hover-lift"
+                  spotlightColor="rgba(245, 235, 224, 0.2)"
+                  className="p-3.5 sm:p-4 rounded-xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-brutal-black hover:border-[#B23A5B] transition-all flex flex-col justify-between card-hover-lift"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <Award className="w-4 h-4 text-[#AFDDE5]" />
+                    <Award className="w-4 h-4 text-[#E8D5C4]" />
                     <span className="text-[10px] font-mono text-muted/80">9.05 CGPA</span>
                   </div>
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-[#F5EBE0] tracking-tight">
                       <CountUp to={90.07} decimals={2} suffix="%" duration={2.2} />
                     </div>
-                    <p className="font-mono text-xs text-[#AFDDE5] mt-0.5 font-medium">
+                    <p className="font-mono text-xs text-[#E8D5C4] mt-0.5 font-bold">
                       Academic Score
                     </p>
                     <p className="text-[11px] text-muted/70 mt-1 leading-snug">
@@ -304,18 +322,18 @@ export function About() {
 
                 {/* 3. 10+ Live Projects */}
                 <SpotlightCard
-                  spotlightColor="rgba(2, 73, 80, 0.35)"
-                  className="p-3.5 sm:p-4 rounded-xl border border-[rgba(175,221,229,0.1)] bg-[#003135]/60 backdrop-blur-xl hover:border-primary/50 transition-all flex flex-col justify-between card-hover-lift"
+                  spotlightColor="rgba(212, 84, 118, 0.25)"
+                  className="p-3.5 sm:p-4 rounded-xl border-2 border-[#E8D5C4]/25 bg-[#3a3229] shadow-brutal-black hover:border-primary/50 transition-all flex flex-col justify-between card-hover-lift"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <Layers className="w-4 h-4 text-primary" />
                     <span className="text-[10px] font-mono text-muted/80">Deployed</span>
                   </div>
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-[#F5EBE0] tracking-tight">
                       <CountUp to={10} suffix="+" duration={1.8} />
                     </div>
-                    <p className="font-mono text-xs text-primary mt-0.5 font-medium">
+                    <p className="font-mono text-xs text-[#D45476] mt-0.5 font-bold">
                       Live Projects
                     </p>
                     <p className="text-[11px] text-muted/70 mt-1 leading-snug">
