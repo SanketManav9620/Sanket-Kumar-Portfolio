@@ -397,32 +397,6 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Sticker 3: Low Latency in Dark Slate Grey with Burgundy Accent */}
-            <div
-              className="absolute -bottom-4 -left-2 sm:-left-4 z-30 sticker-wiggle select-none pointer-events-auto"
-              style={{ "--base-rotate": "3deg" } as React.CSSProperties}
-            >
-              <div className="px-3 py-1 bg-[#3a3229] text-[#F5EBE0] font-heading font-black text-[11px] uppercase tracking-wider border-2 border-[#B23A5B] shadow-brutal-black rotate-3">
-                <span className="flex items-center gap-1">
-                  <span className="text-[#B23A5B]">⚡</span>
-                  <span>LATENCY &lt; 50ms</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Floating Sticker 4: Microservices in Warm Beige */}
-            <div
-              className="absolute -bottom-4 -right-2 sm:-right-4 z-30 sticker-wiggle select-none pointer-events-auto"
-              style={{ "--base-rotate": "-4deg" } as React.CSSProperties}
-            >
-              <div className="px-3 py-1 bg-[#E8D5C4] text-black font-mono font-black text-[11px] uppercase tracking-wider border-2 border-black shadow-brutal-burgundy -rotate-3">
-                <span className="flex items-center gap-1">
-                  <span>🚀</span>
-                  <span>BULLMQ &bull; REDIS</span>
-                </span>
-              </div>
-            </div>
-
             {/* Cockpit HUD Frame for the Architecture Visual in Dark Charcoal */}
             <div className="relative p-3 sm:p-5 rounded-2xl bg-[#3a3229]/90 border-2 border-[#F5EBE0]/20 shadow-2xl backdrop-blur-xl">
               {/* HUD Header Bar */}
@@ -441,11 +415,7 @@ export function Hero() {
               {/* Interactive Core System Architecture Visual */}
               <SystemArchitectureVisual />
 
-              {/* HUD Footer Status */}
-              <div className="pt-2 mt-1 border-t border-white/10 flex items-center justify-between font-mono text-[10px] text-[#A09A92]/70 select-none">
-                <span>INTERACTIVE NODES: 4</span>
-                <span className="text-[#B23A5B] font-semibold">STATUS: NOMINAL</span>
-              </div>
+              
             </div>
           </motion.div>
         </div>
